@@ -16,6 +16,30 @@
             overflow-x: hidden;
             font-size: 16px;
         }
+        .section-description {
+            text-align: center;
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+        .google-form-container {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        footer {
+            background-color: #f8f9fa;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+        }
+        footer p {
+            margin: 0;
+            font-size: 14px;
+            color: #666;
+        }
+        .btn i {
+            margin-right: 8px;
+        }
         #bg-canvas {
             position: fixed;
             top: 0;
@@ -258,6 +282,11 @@
                 <h1>インサイドセールスのリード獲得から商談確定までを<br>継続的に支援するサービス</h1>
             </section>
 
+            <section id="about" class="section">
+                <h2 class="section-title">FORM2000とは？</h2>
+                <p class="section-description">FORM2000は、インサイドセールスのリード獲得からアポイント確定までを支援するサービスです。<br>ニーズヒアリングから企業リスト抽出、効果的な問い合わせ実施まで、一連のプロセスをサポートします。</p>
+            </section>
+
             <section id="features" class="section">
                 <h2 class="section-title">FORM2000の特徴</h2>
                 <div class="features">
@@ -312,33 +341,21 @@
 
             <section class="section contact-form">
                 <h2 class="section-title">お問い合わせ</h2>
-                <form>
-                    <div class="form-group">
-                        <label for="name">お名前*</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">メールアドレス*</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="company">会社名</label>
-                        <input type="text" id="company" name="company">
-                    </div>
-                    <div class="form-group">
-                        <label for="message">お問い合わせ内容</label>
-                        <textarea id="message" name="message"></textarea>
-                    </div>
-                    <button type="submit" class="submit-btn">送信</button>
-                </form>
+                <div class="google-form-container">
+                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSegAJgLIAjAd7FRsCY65MoVKtCqzE29RwawFrVuU8aAYntLOQ/viewform?embedded=true" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
+                </div>
             </section>
 
             <div class="bottom-cta">
-                <button class="btn btn-secondary">資料ダウンロード</button>
-                <button class="btn btn-primary">WEB会議でご相談</button>
+                <a href="https://drive.google.com/file/d/1sJo5kfxl0ubKbivkpj9cGTN1CiEaitFZ/view?usp=sharing" class="btn btn-secondary"><i class="fas fa-file-download"></i> 資料ダウンロード</a>
+                <a href="https://app.spirinc.com/t/RVcehBZsOrGrLw4uB-pLU/as/nXnUmKjz9VPZwY6e8AFVe/confirm" class="btn btn-primary"><i class="fas fa-video"></i> WEB会議でご相談</a>
             </div>
         </div>
     </div>
+
+    <footer>
+        <p>© 2024 Mural Inc. All Rights Reserved.</p>
+    </footer>
 
     <script>
     // Perlin Noise の実装（簡略化版）
