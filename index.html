@@ -1,16 +1,435 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>simple-content-design</title>
-    <meta name="description" content="GPT Engineer Generated Project" />
-    <meta name="author" content="GPT Engineer" />
-    <meta property="og:image" content="/og-image.svg" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script src="/.gpt_engineer/index.js" type="module"></script>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORM2000</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Museo+Moderno:wght@100&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Noto Sans JP', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+            font-size: 16px;
+        }
+        #bg-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        .logo {
+            font-family: 'Museo Moderno', sans-serif;
+            font-size: 48px;
+            font-weight: 100;
+            color: #3498db;
+        }
+        .cta-buttons {
+            display: flex;
+        }
+        .btn {
+            padding: 10px 20px;
+            margin-left: 10px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 5px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .btn-primary {
+            background-color: #3498db;
+            color: white;
+        }
+        .btn-secondary {
+            background-color: white;
+            color: #3498db;
+            border: 1px solid #3498db;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .content-wrapper {
+            background-color: rgba(255, 255, 255, 0.9);
+            margin: 0 auto;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        .content-wrapper:hover {
+            box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+        }
+        .section {
+            margin: 80px 0;
+            padding: 40px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .section-title {
+            font-size: 28px;
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+        .hero h1 {
+            font-size: 24px;
+            color: #333;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            font-weight: 700;
+        }
+        .feature-icon {
+            font-size: 36px;
+            color: #3498db;
+            margin-bottom: 15px;
+        }
+        .features {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .feature {
+            flex: 1;
+            min-width: 250px;
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        .feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+        .feature h3 {
+            font-size: 18px;
+            color: #3498db;
+            margin-top: 0;
+            font-weight: 700;
+        }
+        .feature p {
+            font-size: 14px;
+            margin-bottom: 0;
+        }
+        .steps {
+            counter-reset: step-counter;
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .steps li {
+            counter-increment: step-counter;
+            margin-bottom: 20px;
+            position: relative;
+            padding-left: 40px;
+            font-size: 16px;
+        }
+        .steps li::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: #3498db;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2em;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .faq-item {
+            margin-bottom: 30px;
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        .faq-item:hover {
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+        .faq-item h3 {
+            font-size: 18px;
+            color: #3498db;
+            font-weight: 700;
+        }
+        .faq-item p {
+            font-size: 14px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 14px;
+            font-weight: 700;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        .submit-btn {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .submit-btn:hover {
+            background-color: #2980b9;
+        }
+        .bottom-cta {
+            text-align: center;
+            margin-top: 50px;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #3498db;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="bg-canvas"></canvas>
+    <div class="container">
+        <header>
+            <div class="logo">FORM2000</div>
+            <div class="cta-buttons">
+                <button class="btn btn-secondary">資料ダウンロード</button>
+                <button class="btn btn-primary">WEB会議でご相談</button>
+            </div>
+        </header>
+
+        <nav>
+            <a href="#home">ホーム</a>
+            <a href="#features">特徴</a>
+            <a href="#about">利用の流れ</a>
+            <a href="#faq">FAQ</a>
+        </nav>
+
+        <div class="content-wrapper">
+            <section id="home" class="section hero">
+                <h1>インサイドセールスのリード獲得から商談確定までを<br>継続的に支援するサービス</h1>
+            </section>
+
+            <section id="features" class="section">
+                <h2 class="section-title">FORM2000の特徴</h2>
+                <div class="features">
+                    <div class="feature">
+                        <i class="fas fa-list-alt feature-icon"></i>
+                        <h3>最新企業リスト</h3>
+                        <p>最新のプレスリリースから企業リストを収集。業種やカテゴリー指定で効果的なアプローチが可能。</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-tasks feature-icon"></i>
+                        <h3>一括フォーム送信</h3>
+                        <p>リード獲得・マーケティングを代行し、貴社営業チームがクロージングに集中できる環境を提供。</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-chart-bar feature-icon"></i>
+                        <h3>結果分析とサポート</h3>
+                        <p>企業の反応を詳細に分析。投げ込み内容の継続的な改善提案で、効果を最大化。</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="about" class="section">
+                <h2 class="section-title">ご利用の流れ</h2>
+                <ol class="steps">
+                    <li>お申込み：必要情報をご共有</li>
+                    <li>初回ヒアリング：ターゲット設定、投げ込み文の確認</li>
+                    <li>リスト共有：アタックリストのご提供</li>
+                    <li>フォーム送信実行：ターゲット企業へアプローチ</li>
+                    <li>結果共有と改善：レポート提供と次回への改善提案</li>
+                </ol>
+            </section>
+
+            <section id="faq" class="section faq">
+                <h2 class="section-title">よくある質問</h2>
+                <div class="faq-item">
+                    <h3>Q1: 他社の営業代行サービスとの違いは？</h3>
+                    <p>ターゲティングの精度、アクティブな企業へのアプローチ、カスタマイズされた対応が特徴です。</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Q2: 対応可能な業種は？</h3>
+                    <p>BtoB企業であれば、業種や規模を問わず対応可能です。</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Q3: 最低契約期間は？</h3>
+                    <p>3ヶ月からご契約いただけます。</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Q4: 成果報酬型のプランはありますか？</h3>
+                    <p>ご用意しております。詳細は担当までお問い合わせください。</p>
+                </div>
+            </section>
+
+            <section class="section contact-form">
+                <h2 class="section-title">お問い合わせ</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="name">お名前*</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">メールアドレス*</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="company">会社名</label>
+                        <input type="text" id="company" name="company">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">お問い合わせ内容</label>
+                        <textarea id="message" name="message"></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">送信</button>
+                </form>
+            </section>
+
+            <div class="bottom-cta">
+                <button class="btn btn-secondary">資料ダウンロード</button>
+                <button class="btn btn-primary">WEB会議でご相談</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    // Perlin Noise の実装（簡略化版）
+    const noise = {
+        grad3: new Float64Array([1,1,0,-1,1,0,1,-1,0,-1,-1,0,1,0,1,-1,0,1,1,0,-1,-1,0,-1,0,1,1,0,-1,1,0,1,-1,0,-1,-1]),
+        p: new Uint8Array(256),
+        perm: new Uint8Array(512),
+        seed(seed) {
+            if(seed > 0 && seed < 1) seed *= 65536;
+            seed = Math.floor(seed);
+            if(seed < 256) seed |= seed << 8;
+            for(let i = 0; i < 256; i++) {
+                let v;
+                if (i & 1) v = this.p[i] ^ (seed & 255);
+                else v = this.p[i] ^ ((seed>>8) & 255);
+                this.perm[i] = this.perm[i + 256] = v;
+            }
+        },
+        perlin2(x, y) {
+            const X = Math.floor(x) & 255, Y = Math.floor(y) & 255;
+            x -= Math.floor(x); y -= Math.floor(y);
+            const fx = (3 - 2*x)*x*x, fy = (3 - 2*y)*y*y;
+            const p0 = this.perm[X]+Y, p1 = this.perm[X+1]+Y;
+            return (1 - fy) * (
+                (1 - fx) * this.grad2(this.perm[p0], x, y) +
+                fx * this.grad2(this.perm[p1], x-1, y)
+            ) + fy * (
+                (1 - fx) * this.grad2(this.perm[p0+1], x, y-1) +
+                fx * this.grad2(this.perm[p1+1], x-1, y-1)
+            );
+        },
+        grad2(hash, x, y) {
+            const h = hash & 15;
+            const grad_x = 1 + (h & 7);
+            const grad_y = (h & 8) ? -1 : 1;
+            return (grad_x * x + grad_y * y);
+        }
+    };
+
+    let stageW = 0;
+    let stageH = 0;
+    const canvas = document.getElementById("bg-canvas");
+    const context = canvas.getContext("2d");
+
+    noise.seed(Math.random());
+    resize();
+    tick();
+
+    window.addEventListener("resize", resize);
+
+    function tick() {
+        requestAnimationFrame(tick);
+        const time = Date.now() / 4000;
+        draw(time);
+    }
+
+    function draw(time) {
+        context.clearRect(0, 0, stageW, stageH);
+        context.lineWidth = 1;
+        const amplitude = stageH / 4;
+        const lineNum = 50;
+        const segmentNum = 150;
+
+        [...Array(lineNum).keys()].forEach((j) => {
+            const coefficient = 50 + j;
+            context.beginPath();
+            const hue = 200 + (j / lineNum) * 40; // 青系統の色相
+            const opacity = 0.1 + (j / lineNum) * 0.2; // 透明度を調整
+            context.strokeStyle = `hsla(${hue}, 80%, 50%, ${opacity})`;
+
+            [...Array(segmentNum).keys()].forEach((i) => {
+                const x = (i / (segmentNum - 1)) * stageW;
+                const px = i / coefficient;
+                const py = j / 50 + time;
+                const y = amplitude * noise.perlin2(px, py) + stageH / 2;
+                if (i === 0) {
+                    context.moveTo(x, y);
+                } else {
+                    context.lineTo(x, y);
+                }
+            });
+            context.stroke();
+        });
+    }
+
+    function resize() {
+        stageW = window.innerWidth;
+        stageH = window.innerHeight;
+        canvas.width = stageW;
+        canvas.height = stageH;
+    }
+    </script>
+</body>
 </html>
