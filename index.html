@@ -74,12 +74,31 @@
             color: #3498db;
             display: flex;
             align-items: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
         .logo-text {
             margin-right: 10px;
+            position: relative;
+        }
+        .logo-2000 {
+            color: #2c3e50;
+            font-weight: 700;
         }
         .logo-icon {
             font-size: 36px;
+            margin-left: 10px;
+            color: #2c3e50;
+        }
+        .logo::before {
+            content: '';
+            position: absolute;
+            left: -10px;
+            top: 50%;
+            width: 5px;
+            height: 70%;
+            background-color: #3498db;
+            transform: translateY(-50%);
         }
         .cta-buttons {
             display: flex;
@@ -279,12 +298,12 @@
     <div class="container">
         <header>
             <div class="logo">
-                <span class="logo-text">FORM2000</span>
+                <span class="logo-text">FORM<span class="logo-2000">2000</span></span>
                 <span class="logo-icon"><i class="fas fa-chart-line"></i></span>
             </div>
             <div class="cta-buttons">
-                <a href="https://drive.google.com/file/d/1sJo5kfxl0ubKbivkpj9cGTN1CiEaitFZ/view?usp=sharing" target="_blank" class="btn btn-secondary"><i class="fas fa-file-download"></i> 資料ダウンロード</a>
-                <a href="https://app.spirinc.com/t/RVcehBZsOrGrLw4uB-pLU/as/nXnUmKjz9VPZwY6e8AFVe/confirm" target="_blank" class="btn btn-primary"><i class="fas fa-video"></i> WEB会議でご相談</a>
+                <a href="https://drive.google.com/file/d/1sJo5kfxl0ubKbivkpj9cGTN1CiEaitFZ/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-secondary"><i class="fas fa-file-download"></i> 資料ダウンロード</a>
+                <a href="https://app.spirinc.com/t/RVcehBZsOrGrLw4uB-pLU/as/nXnUmKjz9VPZwY6e8AFVe/confirm" target="_blank" rel="noopener noreferrer" class="btn btn-primary"><i class="fas fa-video"></i> WEB会議でご相談</a>
             </div>
         </header>
 
@@ -365,8 +384,8 @@
             </section>
 
             <div class="bottom-cta">
-                <a href="https://drive.google.com/file/d/1sJo5kfxl0ubKbivkpj9cGTN1CiEaitFZ/view?usp=sharing" target="_blank" class="btn btn-secondary"><i class="fas fa-file-download"></i> 資料ダウンロード</a>
-                <a href="https://app.spirinc.com/t/RVcehBZsOrGrLw4uB-pLU/as/nXnUmKjz9VPZwY6e8AFVe/confirm" target="_blank" class="btn btn-primary"><i class="fas fa-video"></i> WEB会議でご相談</a>
+                <a href="https://drive.google.com/file/d/1sJo5kfxl0ubKbivkpj9cGTN1CiEaitFZ/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-secondary"><i class="fas fa-file-download"></i> 資料ダウンロード</a>
+                <a href="https://app.spirinc.com/t/RVcehBZsOrGrLw4uB-pLU/as/nXnUmKjz9VPZwY6e8AFVe/confirm" target="_blank" rel="noopener noreferrer" class="btn btn-primary"><i class="fas fa-video"></i> WEB会議でご相談</a>
             </div>
         </div>
     </div>
