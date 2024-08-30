@@ -40,6 +40,13 @@
         .btn i {
             margin-right: 8px;
         }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-weight: bold;
+        }
         #bg-canvas {
             position: fixed;
             top: 0;
@@ -65,6 +72,14 @@
             font-size: 48px;
             font-weight: 100;
             color: #3498db;
+            display: flex;
+            align-items: center;
+        }
+        .logo-text {
+            margin-right: 10px;
+        }
+        .logo-icon {
+            font-size: 36px;
         }
         .cta-buttons {
             display: flex;
@@ -263,10 +278,13 @@
     <canvas id="bg-canvas"></canvas>
     <div class="container">
         <header>
-            <div class="logo">FORM2000</div>
+            <div class="logo">
+                <span class="logo-text">FORM2000</span>
+                <span class="logo-icon"><i class="fas fa-chart-line"></i></span>
+            </div>
             <div class="cta-buttons">
-                <button class="btn btn-secondary">資料ダウンロード</button>
-                <button class="btn btn-primary">WEB会議でご相談</button>
+                <a href="https://drive.google.com/file/d/1sJo5kfxl0ubKbivkpj9cGTN1CiEaitFZ/view?usp=sharing" target="_blank" class="btn btn-secondary"><i class="fas fa-file-download"></i> 資料ダウンロード</a>
+                <a href="https://app.spirinc.com/t/RVcehBZsOrGrLw4uB-pLU/as/nXnUmKjz9VPZwY6e8AFVe/confirm" target="_blank" class="btn btn-primary"><i class="fas fa-video"></i> WEB会議でご相談</a>
             </div>
         </header>
 
@@ -347,8 +365,8 @@
             </section>
 
             <div class="bottom-cta">
-                <a href="https://drive.google.com/file/d/1sJo5kfxl0ubKbivkpj9cGTN1CiEaitFZ/view?usp=sharing" class="btn btn-secondary"><i class="fas fa-file-download"></i> 資料ダウンロード</a>
-                <a href="https://app.spirinc.com/t/RVcehBZsOrGrLw4uB-pLU/as/nXnUmKjz9VPZwY6e8AFVe/confirm" class="btn btn-primary"><i class="fas fa-video"></i> WEB会議でご相談</a>
+                <a href="https://drive.google.com/file/d/1sJo5kfxl0ubKbivkpj9cGTN1CiEaitFZ/view?usp=sharing" target="_blank" class="btn btn-secondary"><i class="fas fa-file-download"></i> 資料ダウンロード</a>
+                <a href="https://app.spirinc.com/t/RVcehBZsOrGrLw4uB-pLU/as/nXnUmKjz9VPZwY6e8AFVe/confirm" target="_blank" class="btn btn-primary"><i class="fas fa-video"></i> WEB会議でご相談</a>
             </div>
         </div>
     </div>
