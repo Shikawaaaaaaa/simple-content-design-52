@@ -78,17 +78,10 @@
             letter-spacing: 2px;
         }
         .logo-text {
-            margin-right: 10px;
             position: relative;
         }
         .logo-2000 {
-            color: #2c3e50;
             font-weight: 700;
-        }
-        .logo-icon {
-            font-size: 36px;
-            margin-left: 10px;
-            color: #2c3e50;
         }
         .logo::before {
             content: '';
@@ -274,6 +267,25 @@
         .bottom-cta {
             text-align: center;
             margin-top: 50px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 0 20px;
+        }
+        .bottom-cta .btn {
+            flex: 1;
+            max-width: 400px;
+            font-size: 18px;
+            padding: 15px 30px;
+        }
+        @media (max-width: 768px) {
+            .bottom-cta {
+                flex-direction: column;
+            }
+            .bottom-cta .btn {
+                width: 100%;
+                max-width: none;
+            }
         }
         nav {
             display: flex;
@@ -299,7 +311,6 @@
         <header>
             <div class="logo">
                 <span class="logo-text">FORM<span class="logo-2000">2000</span></span>
-                <span class="logo-icon"><i class="fas fa-chart-line"></i></span>
             </div>
             <div class="cta-buttons">
                 <a href="https://drive.google.com/file/d/1sJo5kfxl0ubKbivkpj9cGTN1CiEaitFZ/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-secondary"><i class="fas fa-file-download"></i> 資料ダウンロード</a>
