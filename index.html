@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Museo+Moderno:wght@100&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
         body, html {
             margin: 0;
             padding: 0;
@@ -69,9 +68,9 @@
             padding: 20px 0;
         }
         .logo {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Museo Moderno', sans-serif;
             font-size: 48px;
-            font-weight: 700;
+            font-weight: 100;
             color: #3498db;
             display: flex;
             align-items: center;
@@ -83,8 +82,13 @@
             position: relative;
         }
         .logo-2000 {
-            color: #3498db;
+            color: #2c3e50;
             font-weight: 700;
+        }
+        .logo-icon {
+            font-size: 36px;
+            margin-left: 10px;
+            color: #2c3e50;
         }
         .logo::before {
             content: '';
@@ -295,6 +299,7 @@
         <header>
             <div class="logo">
                 <span class="logo-text">FORM<span class="logo-2000">2000</span></span>
+                <span class="logo-icon"><i class="fas fa-chart-line"></i></span>
             </div>
             <div class="cta-buttons">
                 <a href="https://drive.google.com/file/d/1sJo5kfxl0ubKbivkpj9cGTN1CiEaitFZ/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-secondary"><i class="fas fa-file-download"></i> 資料ダウンロード</a>
