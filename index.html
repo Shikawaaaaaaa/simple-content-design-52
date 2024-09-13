@@ -6,344 +6,7 @@
     <title>FORM2000</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Museo+Moderno:wght@100&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
-    <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            font-family: 'Noto Sans JP', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            overflow-x: hidden;
-            font-size: 16px;
-        }
-        .section-description {
-            text-align: center;
-            font-size: 18px;
-            margin-bottom: 30px;
-        }
-        .google-form-container {
-            width: 100%;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        footer {
-            background-color: #f8f9fa;
-            text-align: center;
-            padding: 20px 0;
-            margin-top: 50px;
-        }
-        footer p {
-            margin: 0;
-            font-size: 14px;
-            color: #666;
-        }
-        .btn i {
-            margin-right: 8px;
-        }
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        #bg-canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-        }
-        .container {
-            width: 90%;
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-        }
-        .logo {
-            font-family: 'Museo Moderno', sans-serif;
-            font-size: 48px;
-            font-weight: 100;
-            color: #3498db;
-            display: flex;
-            align-items: center;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-        .logo-text {
-            position: relative;
-        }
-        .logo-2000 {
-            font-weight: 700;
-        }
-        .logo::before {
-            content: '';
-            position: absolute;
-            left: -10px;
-            top: 50%;
-            width: 5px;
-            height: 70%;
-            background-color: #3498db;
-            transform: translateY(-50%);
-        }
-        .cta-buttons {
-            display: flex;
-        }
-        .btn {
-            padding: 10px 20px;
-            margin-left: 10px;
-            border: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border-radius: 5px;
-            font-size: 14px;
-            font-weight: bold;
-        }
-        .btn-primary {
-            background-color: #3498db;
-            color: white;
-        }
-        .btn-secondary {
-            background-color: white;
-            color: #3498db;
-            border: 1px solid #3498db;
-        }
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        }
-        .content-wrapper {
-            background-color: rgba(255, 255, 255, 0.9);
-            margin: 0 auto;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-        }
-        .content-wrapper:hover {
-            box-shadow: 0 6px 8px rgba(0,0,0,0.15);
-        }
-        .section {
-            margin: 80px 0;
-            padding: 40px;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        .section-title {
-            font-size: 28px;
-            color: #2c3e50;
-            text-align: center;
-            margin-bottom: 30px;
-            font-weight: 700;
-        }
-        .hero h1 {
-            font-size: 24px;
-            color: #333;
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-            font-weight: 700;
-        }
-        .feature-icon {
-            font-size: 36px;
-            color: #3498db;
-            margin-bottom: 15px;
-        }
-        .features {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-        .feature {
-            flex: 1;
-            min-width: 250px;
-            background-color: #f8f9fa;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-        }
-        .feature:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-        }
-        .feature h3 {
-            font-size: 18px;
-            color: #3498db;
-            margin-top: 0;
-            font-weight: 700;
-        }
-        .feature p {
-            font-size: 14px;
-            margin-bottom: 0;
-        }
-        .steps {
-            counter-reset: step-counter;
-            list-style-type: none;
-            padding-left: 0;
-        }
-        .steps li {
-            counter-increment: step-counter;
-            margin-bottom: 20px;
-            position: relative;
-            padding-left: 40px;
-            font-size: 16px;
-        }
-        .steps li::before {
-            content: counter(step-counter);
-            position: absolute;
-            left: 0;
-            top: 0;
-            background-color: #3498db;
-            color: white;
-            font-weight: bold;
-            font-size: 1.2em;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .faq-item {
-            margin-bottom: 30px;
-            background-color: #f8f9fa;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-        }
-        .faq-item:hover {
-            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-        }
-        .faq-item h3 {
-            font-size: 18px;
-            color: #3498db;
-            font-weight: 700;
-        }
-        .faq-item p {
-            font-size: 14px;
-        }
-        .form-group {
-            margin-bottom: 20px;
-        }
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-size: 14px;
-            font-weight: 700;
-        }
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 14px;
-        }
-        .submit-btn {
-            background-color: #3498db;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: all 0.3s ease;
-            font-size: 14px;
-            font-weight: bold;
-        }
-        .submit-btn:hover {
-            background-color: #2980b9;
-        }
-        .bottom-cta {
-            text-align: center;
-            margin-top: 50px;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            padding: 0 20px;
-        }
-        .bottom-cta .btn {
-            flex: 1;
-            max-width: 400px;
-            font-size: 18px;
-            padding: 15px 30px;
-        }
-        @media (max-width: 768px) {
-            .bottom-cta {
-                flex-direction: column;
-            }
-            .bottom-cta .btn {
-                width: 100%;
-                max-width: none;
-            }
-        }
-        nav {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-        }
-        nav a {
-            margin: 0 15px;
-            text-decoration: none;
-            color: #333;
-            font-weight: bold;
-            font-size: 14px;
-            transition: color 0.3s ease;
-        }
-        nav a:hover {
-            color: #3498db;
-        }
-        .new-section {
-            margin: 60px 0;
-            padding: 30px;
-            background-color: #f8f9fa;
-            border-radius: 15px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-        }
-        .new-section:hover {
-            box-shadow: 0 6px 8px rgba(0,0,0,0.15);
-        }
-        .new-section-title {
-            font-size: 24px;
-            color: #2c3e50;
-            text-align: center;
-            margin-bottom: 20px;
-            font-weight: 700;
-        }
-        .new-section-icon {
-            font-size: 48px;
-            color: #3498db;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .new-section-content {
-            font-size: 16px;
-            line-height: 1.6;
-        }
-        #custom-list {
-            background-color: #e8f4fd;
-        }
-        #trial-plan {
-            background-color: #e8fdec;
-        }
-        #media2000 {
-            background-color: #fde8e8;
-        }
-        #partner-recruitment {
-            background-color: #f4e8fd;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <canvas id="bg-canvas"></canvas>
@@ -407,6 +70,106 @@
                 </ol>
             </section>
 
+            <section id="custom-list" class="new-section">
+                <div class="new-section-icon"><i class="fas fa-list-ul"></i></div>
+                <h2 class="new-section-title">カスタムリスト抽出</h2>
+                <div class="new-section-content">
+                    <p>プレスリリース以外にも、ご要望に応じたオーダーメイドのリストを抽出いたします。</p>
+                    <div class="list-examples">
+                        <div class="list-example">
+                            <i class="fas fa-users"></i>
+                            <span>業界イベントに出展した企業リスト</span>
+                        </div>
+                        <div class="list-example">
+                            <i class="fas fa-money-bill-wave"></i>
+                            <span>資金調達に成功した企業リスト</span>
+                        </div>
+                        <div class="list-example">
+                            <i class="fas fa-search"></i>
+                            <span>直近で求人募集を始めた企業リスト</span>
+                        </div>
+                        <div class="list-example">
+                            <i class="fas fa-globe"></i>
+                            <span>SDGs関連の取り組みを行っている企業リスト</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="trial-plan" class="new-section">
+                <div class="new-section-icon"><i class="fas fa-rocket"></i></div>
+                <h2 class="new-section-title">お試しプラン</h2>
+                <div class="new-section-content">
+                    <p><strong>初回のみ 1000件 ¥45,000-(税抜き)で配信</strong></p>
+                    <div class="trial-features">
+                        <div class="trial-feature">
+                            <i class="fas fa-bullseye"></i>
+                            <span>ターゲット企業1000社のリストアップ</span>
+                        </div>
+                        <div class="trial-feature">
+                            <i class="fas fa-pencil-alt"></i>
+                            <span>効果的な文言作成サポート</span>
+                        </div>
+                        <div class="trial-feature">
+                            <i class="fas fa-paper-plane"></i>
+                            <span>投げ込み実行</span>
+                        </div>
+                        <div class="trial-feature">
+                            <i class="fas fa-chart-line"></i>
+                            <span>詳細な結果レポート共有</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="media2000" class="new-section">
+                <div class="new-section-icon"><i class="fas fa-newspaper"></i></div>
+                <h2 class="new-section-title">Media2000</h2>
+                <div class="new-section-content">
+                    <p>全国1400以上のWebメディアへ同時アプローチを実行。低コストで効率的なPR活動を実現します。</p>
+                    <div class="media-features">
+                        <div class="media-feature">
+                            <i class="fas fa-bullhorn"></i>
+                            <span>業界やテーマ別のメディアセグメント化</span>
+                        </div>
+                        <div class="media-feature">
+                            <i class="fas fa-chart-pie"></i>
+                            <span>詳細なKPIレポート提供</span>
+                        </div>
+                        <div class="media-feature">
+                            <i class="fas fa-sync-alt"></i>
+                            <span>戦略の継続的な改善支援</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="partner-recruitment" class="new-section">
+                <div class="new-section-icon"><i class="fas fa-handshake"></i></div>
+                <h2 class="new-section-title">FORM2000代理店パートナー募集中！</h2>
+                <div class="new-section-content">
+                    <p><strong>初期費用0円でスタート可能。</strong></p>
+                    <div class="partner-benefits">
+                        <div class="partner-benefit">
+                            <i class="fas fa-piggy-bank"></i>
+                            <span>初期投資が不要：リスクを最小限に抑えた新規事業展開が可能です。</span>
+                        </div>
+                        <div class="partner-benefit">
+                            <i class="fas fa-tags"></i>
+                            <span>シンプルな価格設定：既存の商材販売原価に上乗せする仕組み。</span>
+                        </div>
+                        <div class="partner-benefit">
+                            <i class="fas fa-puzzle-piece"></i>
+                            <span>既存商材との相乗効果：貴社商材と組み合わせることで独自の付加価値を生み出します。</span>
+                        </div>
+                        <div class="partner-benefit">
+                            <i class="fas fa-headset"></i>
+                            <span>販売後のサポート：オペレーション部分は弊社側で代行いたします。</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <section id="faq" class="section faq">
                 <h2 class="section-title">よくある質問</h2>
                 <div class="faq-item">
@@ -429,59 +192,6 @@
                 </div>
             </section>
 
-            <!-- New sections start here -->
-            <section id="custom-list" class="new-section">
-                <div class="new-section-icon"><i class="fas fa-list-ul"></i></div>
-                <h2 class="new-section-title">カスタムリスト抽出</h2>
-                <div class="new-section-content">
-                    <p>プレスリリース以外にも、ご要望に応じたオーダーメイドのリストを抽出いたします。</p>
-                    <ul>
-                        <li>業界イベントに出展した企業リスト</li>
-                        <li>資金調達に成功した企業リスト</li>
-                        <li>直近で求人募集を始めた企業リスト</li>
-                        <li>SDGs関連の取り組みを行っている企業リスト</li>
-                    </ul>
-                </div>
-            </section>
-
-            <section id="trial-plan" class="new-section">
-                <div class="new-section-icon"><i class="fas fa-rocket"></i></div>
-                <h2 class="new-section-title">お試しプラン</h2>
-                <div class="new-section-content">
-                    <p><strong>初回のみ 1000件 ¥45,000-(税抜き)で配信</strong></p>
-                    <ul>
-                        <li>ターゲット企業1000社のリストアップ</li>
-                        <li>効果的な文言作成サポート</li>
-                        <li>投げ込み実行</li>
-                        <li>詳細な結果レポート共有</li>
-                    </ul>
-                </div>
-            </section>
-
-            <section id="media2000" class="new-section">
-                <div class="new-section-icon"><i class="fas fa-newspaper"></i></div>
-                <h2 class="new-section-title">Media2000</h2>
-                <div class="new-section-content">
-                    <p>全国1400以上のWebメディアへ同時アプローチを実行。低コストで効率的なPR活動を実現します。</p>
-                    <p>FORM2000の機能を活用し、業界やテーマ別のメディアセグメント化機能により、ターゲットを絞ったPR戦略の実行が可能です。</p>
-                </div>
-            </section>
-
-            <section id="partner-recruitment" class="new-section">
-                <div class="new-section-icon"><i class="fas fa-handshake"></i></div>
-                <h2 class="new-section-title">FORM2000代理店パートナー募集中！</h2>
-                <div class="new-section-content">
-                    <p><strong>初期費用0円でスタート可能。</strong></p>
-                    <ul>
-                        <li>初期投資が不要：リスクを最小限に抑えた新規事業展開が可能です。</li>
-                        <li>シンプルな価格設定：既存の商材販売原価に上乗せする仕組み。</li>
-                        <li>既存商材との相乗効果：貴社商材と組み合わせることで独自の付加価値を生み出します。</li>
-                        <li>販売後のサポート：オペレーション部分は弊社側で代行いたします。</li>
-                    </ul>
-                </div>
-            </section>
-            <!-- New sections end here -->
-
             <section class="section contact-form">
                 <h2 class="section-title">お問い合わせ</h2>
                 <div class="google-form-container">
@@ -500,96 +210,6 @@
         <p>© 2024 Mural Inc. All Rights Reserved.</p>
     </footer>
 
-    <script>
-    // Perlin Noise implementation (simplified version)
-    const noise = {
-        grad3: new Float64Array([1,1,0,-1,1,0,1,-1,0,-1,-1,0,1,0,1,-1,0,1,1,0,-1,-1,0,-1,0,1,1,0,-1,1,0,1,-1,0,-1,-1]),
-        p: new Uint8Array(256),
-        perm: new Uint8Array(512),
-        seed(seed) {
-            if(seed > 0 && seed < 1) seed *= 65536;
-            seed = Math.floor(seed);
-            if(seed < 256) seed |= seed << 8;
-            for(let i = 0; i < 256; i++) {
-                let v;
-                if (i & 1) v = this.p[i] ^ (seed & 255);
-                else v = this.p[i] ^ ((seed>>8) & 255);
-                this.perm[i] = this.perm[i + 256] = v;
-            }
-        },
-        perlin2(x, y) {
-            const X = Math.floor(x) & 255, Y = Math.floor(y) & 255;
-            x -= Math.floor(x); y -= Math.floor(y);
-            const fx = (3 - 2*x)*x*x, fy = (3 - 2*y)*y*y;
-            const p0 = this.perm[X]+Y, p1 = this.perm[X+1]+Y;
-            return (1 - fy) * (
-                (1 - fx) * this.grad2(this.perm[p0], x, y) +
-                fx * this.grad2(this.perm[p1], x-1, y)
-            ) + fy * (
-                (1 - fx) * this.grad2(this.perm[p0+1], x, y-1) +
-                fx * this.grad2(this.perm[p1+1], x-1, y-1)
-            );
-        },
-        grad2(hash, x, y) {
-            const h = hash & 15;
-            const grad_x = 1 + (h & 7);
-            const grad_y = (h & 8) ? -1 : 1;
-            return (grad_x * x + grad_y * y);
-        }
-    };
-
-    let stageW = 0;
-    let stageH = 0;
-    const canvas = document.getElementById("bg-canvas");
-    const context = canvas.getContext("2d");
-
-    noise.seed(Math.random());
-    resize();
-    tick();
-
-    window.addEventListener("resize", resize);
-
-    function tick() {
-        requestAnimationFrame(tick);
-        const time = Date.now() / 4000;
-        draw(time);
-    }
-
-    function draw(time) {
-        context.clearRect(0, 0, stageW, stageH);
-        context.lineWidth = 1;
-        const amplitude = stageH / 4;
-        const lineNum = 50;
-        const segmentNum = 150;
-
-        [...Array(lineNum).keys()].forEach((j) => {
-            const coefficient = 50 + j;
-            context.beginPath();
-            const hue = 200 + (j / lineNum) * 40; // Blue-based hue
-            const opacity = 0.1 + (j / lineNum) * 0.2; // Adjust opacity
-            context.strokeStyle = `hsla(${hue}, 80%, 50%, ${opacity})`;
-
-            [...Array(segmentNum).keys()].forEach((i) => {
-                const x = (i / (segmentNum - 1)) * stageW;
-                const px = i / coefficient;
-                const py = j / 50 + time;
-                const y = amplitude * noise.perlin2(px, py) + stageH / 2;
-                if (i === 0) {
-                    context.moveTo(x, y);
-                } else {
-                    context.lineTo(x, y);
-                }
-            });
-            context.stroke();
-        });
-    }
-
-    function resize() {
-        stageW = window.innerWidth;
-        stageH = window.innerHeight;
-        canvas.width = stageW;
-        canvas.height = stageH;
-    }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
