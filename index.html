@@ -303,6 +303,46 @@
         nav a:hover {
             color: #3498db;
         }
+        .new-section {
+            margin: 60px 0;
+            padding: 30px;
+            background-color: #f8f9fa;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        .new-section:hover {
+            box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+        }
+        .new-section-title {
+            font-size: 24px;
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        .new-section-icon {
+            font-size: 48px;
+            color: #3498db;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .new-section-content {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        #custom-list {
+            background-color: #e8f4fd;
+        }
+        #trial-plan {
+            background-color: #e8fdec;
+        }
+        #media2000 {
+            background-color: #fde8e8;
+        }
+        #partner-recruitment {
+            background-color: #f4e8fd;
+        }
     </style>
 </head>
 <body>
@@ -390,73 +430,54 @@
             </section>
 
             <!-- New sections start here -->
-            <section id="custom-list" class="section">
-                <h2 class="section-title">カスタムリスト抽出</h2>
-                <p class="section-description">プレスリリース以外にも、ご要望に応じたオーダーメイドのリストを抽出いたします。</p>
-                <div class="features">
-                    <div class="feature">
-                        <h3>業界イベントに出展した企業リスト</h3>
-                    </div>
-                    <div class="feature">
-                        <h3>資金調達に成功した企業リスト</h3>
-                    </div>
-                    <div class="feature">
-                        <h3>直近で求人募集を始めた企業リスト</h3>
-                    </div>
-                    <div class="feature">
-                        <h3>SDGs関連の取り組みを行っている企業リスト</h3>
-                    </div>
+            <section id="custom-list" class="new-section">
+                <div class="new-section-icon"><i class="fas fa-list-ul"></i></div>
+                <h2 class="new-section-title">カスタムリスト抽出</h2>
+                <div class="new-section-content">
+                    <p>プレスリリース以外にも、ご要望に応じたオーダーメイドのリストを抽出いたします。</p>
+                    <ul>
+                        <li>業界イベントに出展した企業リスト</li>
+                        <li>資金調達に成功した企業リスト</li>
+                        <li>直近で求人募集を始めた企業リスト</li>
+                        <li>SDGs関連の取り組みを行っている企業リスト</li>
+                    </ul>
                 </div>
             </section>
 
-            <section id="trial-plan" class="section">
-                <h2 class="section-title">お試しプラン</h2>
-                <p class="section-description">初回のみ 1000件 ¥45,000-(税抜き)で配信</p>
-                <div class="features">
-                    <div class="feature">
-                        <h3>ターゲット企業1000社のリストアップ</h3>
-                    </div>
-                    <div class="feature">
-                        <h3>効果的な文言作成サポート</h3>
-                    </div>
-                    <div class="feature">
-                        <h3>投げ込み実行</h3>
-                    </div>
-                    <div class="feature">
-                        <h3>詳細な結果レポート共有</h3>
-                    </div>
+            <section id="trial-plan" class="new-section">
+                <div class="new-section-icon"><i class="fas fa-rocket"></i></div>
+                <h2 class="new-section-title">お試しプラン</h2>
+                <div class="new-section-content">
+                    <p><strong>初回のみ 1000件 ¥45,000-(税抜き)で配信</strong></p>
+                    <ul>
+                        <li>ターゲット企業1000社のリストアップ</li>
+                        <li>効果的な文言作成サポート</li>
+                        <li>投げ込み実行</li>
+                        <li>詳細な結果レポート共有</li>
+                    </ul>
                 </div>
             </section>
 
-            <section id="media2000" class="section">
-                <h2 class="section-title">Media2000</h2>
-                <p class="section-description">全国1400以上のWebメディアへ同時アプローチを実行。低コストで効率的なPR活動を実現します。</p>
-                <div class="feature">
-                    <h3>FORM2000の機能を活用</h3>
-                    <p>業界やテーマ別のメディアセグメント化機能により、ターゲットを絞ったPR戦略の実行が可能です。</p>
+            <section id="media2000" class="new-section">
+                <div class="new-section-icon"><i class="fas fa-newspaper"></i></div>
+                <h2 class="new-section-title">Media2000</h2>
+                <div class="new-section-content">
+                    <p>全国1400以上のWebメディアへ同時アプローチを実行。低コストで効率的なPR活動を実現します。</p>
+                    <p>FORM2000の機能を活用し、業界やテーマ別のメディアセグメント化機能により、ターゲットを絞ったPR戦略の実行が可能です。</p>
                 </div>
             </section>
 
-            <section id="partner-recruitment" class="section">
-                <h2 class="section-title">FORM2000代理店パートナー募集中！</h2>
-                <p class="section-description">初期費用0円でスタート可能。</p>
-                <div class="features">
-                    <div class="feature">
-                        <h3>初期投資が不要</h3>
-                        <p>リスクを最小限に抑えた新規事業展開が可能です。</p>
-                    </div>
-                    <div class="feature">
-                        <h3>シンプルな価格設定</h3>
-                        <p>既存の商材販売原価に上乗せする仕組み。</p>
-                    </div>
-                    <div class="feature">
-                        <h3>既存商材との相乗効果</h3>
-                        <p>貴社商材と組み合わせることで独自の付加価値を生み出します。</p>
-                    </div>
-                    <div class="feature">
-                        <h3>販売後のサポート</h3>
-                        <p>オペレーション部分は弊社側で代行いたします。</p>
-                    </div>
+            <section id="partner-recruitment" class="new-section">
+                <div class="new-section-icon"><i class="fas fa-handshake"></i></div>
+                <h2 class="new-section-title">FORM2000代理店パートナー募集中！</h2>
+                <div class="new-section-content">
+                    <p><strong>初期費用0円でスタート可能。</strong></p>
+                    <ul>
+                        <li>初期投資が不要：リスクを最小限に抑えた新規事業展開が可能です。</li>
+                        <li>シンプルな価格設定：既存の商材販売原価に上乗せする仕組み。</li>
+                        <li>既存商材との相乗効果：貴社商材と組み合わせることで独自の付加価値を生み出します。</li>
+                        <li>販売後のサポート：オペレーション部分は弊社側で代行いたします。</li>
+                    </ul>
                 </div>
             </section>
             <!-- New sections end here -->
