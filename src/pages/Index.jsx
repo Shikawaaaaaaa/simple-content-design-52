@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 import { ListFilter, Rocket, Newspaper, Handshake } from 'lucide-react';
+import { initBackgroundAnimation } from '../utils/backgroundAnimation';
 
 const Index = () => {
+  useEffect(() => {
+    initBackgroundAnimation();
+  }, []);
+
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-blue-100 to-indigo-200 p-4">
       <canvas id="bg-canvas" className="fixed top-0 left-0 w-full h-full -z-10"></canvas>
