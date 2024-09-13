@@ -16,9 +16,48 @@
             overflow-x: hidden;
             font-size: 16px;
         }
+        .section-description {
+            text-align: center;
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+        .google-form-container {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        footer {
+            background-color: #f8f9fa;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+        }
+        footer p {
+            margin: 0;
+            font-size: 14px;
+            color: #666;
+        }
+        .btn i {
+            margin-right: 8px;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        #bg-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
         .container {
             width: 90%;
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 20px;
         }
@@ -38,8 +77,21 @@
             text-transform: uppercase;
             letter-spacing: 2px;
         }
+        .logo-text {
+            position: relative;
+        }
         .logo-2000 {
             font-weight: 700;
+        }
+        .logo::before {
+            content: '';
+            position: absolute;
+            left: -10px;
+            top: 50%;
+            width: 5px;
+            height: 70%;
+            background-color: #3498db;
+            transform: translateY(-50%);
         }
         .cta-buttons {
             display: flex;
@@ -53,10 +105,6 @@
             border-radius: 5px;
             font-size: 14px;
             font-weight: bold;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
         }
         .btn-primary {
             background-color: #3498db;
@@ -71,8 +119,16 @@
             transform: translateY(-2px);
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
-        .btn i {
-            margin-right: 8px;
+        .content-wrapper {
+            background-color: rgba(255, 255, 255, 0.9);
+            margin: 0 auto;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        .content-wrapper:hover {
+            box-shadow: 0 6px 8px rgba(0,0,0,0.15);
         }
         .section {
             margin: 80px 0;
@@ -86,6 +142,14 @@
             color: #2c3e50;
             text-align: center;
             margin-bottom: 30px;
+            font-weight: 700;
+        }
+        .hero h1 {
+            font-size: 24px;
+            color: #333;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
             font-weight: 700;
         }
         .feature-icon {
@@ -122,142 +186,317 @@
             font-size: 14px;
             margin-bottom: 0;
         }
-        footer {
-            background-color: #f8f9fa;
-            text-align: center;
-            padding: 20px 0;
-            margin-top: 50px;
-        }
-        footer p {
-            margin: 0;
-            font-size: 14px;
-            color: #666;
-        }
-        .icon-list {
+        .steps {
+            counter-reset: step-counter;
             list-style-type: none;
-            padding: 0;
+            padding-left: 0;
         }
-        .icon-list li {
+        .steps li {
+            counter-increment: step-counter;
+            margin-bottom: 20px;
+            position: relative;
+            padding-left: 40px;
+            font-size: 16px;
+        }
+        .steps li::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: #3498db;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2em;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
             display: flex;
             align-items: center;
-            margin-bottom: 15px;
+            justify-content: center;
         }
-        .icon-list i {
-            font-size: 24px;
+        .faq-item {
+            margin-bottom: 30px;
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        .faq-item:hover {
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+        .faq-item h3 {
+            font-size: 18px;
             color: #3498db;
-            margin-right: 15px;
-            width: 30px;
+            font-weight: 700;
+        }
+        .faq-item p {
+            font-size: 14px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 14px;
+            font-weight: 700;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        .submit-btn {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .submit-btn:hover {
+            background-color: #2980b9;
+        }
+        .bottom-cta {
             text-align: center;
+            margin-top: 50px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 0 20px;
+        }
+        .bottom-cta .btn {
+            flex: 1;
+            max-width: 400px;
+            font-size: 18px;
+            padding: 15px 30px;
+        }
+        @media (max-width: 768px) {
+            .bottom-cta {
+                flex-direction: column;
+            }
+            .bottom-cta .btn {
+                width: 100%;
+                max-width: none;
+            }
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #3498db;
         }
     </style>
 </head>
 <body>
+    <canvas id="bg-canvas"></canvas>
     <div class="container">
         <header>
             <div class="logo">
-                <span>FORM<span class="logo-2000">2000</span></span>
+                <span class="logo-text">FORM<span class="logo-2000">2000</span></span>
             </div>
             <div class="cta-buttons">
-                <a href="#" class="btn btn-secondary"><i class="fas fa-file-download"></i> 資料ダウンロード</a>
-                <a href="#" class="btn btn-primary"><i class="fas fa-video"></i> WEB会議でご相談</a>
+                <a href="https://drive.google.com/file/d/1sJo5kfxl0ubKbivkpj9cGTN1CiEaitFZ/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-secondary"><i class="fas fa-file-download"></i> 資料ダウンロード</a>
+                <a href="https://app.spirinc.com/t/RVcehBZsOrGrLw4uB-pLU/as/nXnUmKjz9VPZwY6e8AFVe/confirm" target="_blank" rel="noopener noreferrer" class="btn btn-primary"><i class="fas fa-video"></i> WEB会議でご相談</a>
             </div>
         </header>
 
-        <section class="section">
-            <h2 class="section-title">インサイドセールスのリード獲得から商談確定までを<br>継続的に支援するサービス</h2>
-            <p>デイリーで大手プレス掲載サイトから企業リストを収集しているため、鮮度が高く動きのある企業へ効率的にアプローチすることが可能です。「エンターテイメント」「医療」など、カテゴリーを指定したリスト抽出が可能です。</p>
-        </section>
+        <nav>
+            <a href="#home">ホーム</a>
+            <a href="#features">特徴</a>
+            <a href="#about">利用の流れ</a>
+            <a href="#faq">FAQ</a>
+        </nav>
 
-        <section id="custom-list" class="section">
-            <h2 class="section-title">カスタムリスト抽出</h2>
-            <p>幅広いリスト抽出に対応しています。プレスリリース以外にも、ご要望に応じたオーダーメイドのリストを抽出いたします。</p>
-            <div class="features">
-                <div class="feature">
-                    <i class="fas fa-users feature-icon"></i>
-                    <h3>業界イベントに出展した企業リスト</h3>
-                </div>
-                <div class="feature">
-                    <i class="fas fa-chart-line feature-icon"></i>
-                    <h3>資金調達に成功した企業リスト</h3>
-                </div>
-                <div class="feature">
-                    <i class="fas fa-search feature-icon"></i>
-                    <h3>直近で求人募集を始めた企業リスト</h3>
-                </div>
-                <div class="feature">
-                    <i class="fas fa-globe feature-icon"></i>
-                    <h3>SDGs関連の取り組みを行っている企業リスト</h3>
-                </div>
-            </div>
-        </section>
+        <div class="content-wrapper">
+            <section id="home" class="section hero">
+                <h1>インサイドセールスのリード獲得から商談確定までを<br>継続的に支援するサービス</h1>
+            </section>
 
-        <section id="trial-plan" class="section">
-            <h2 class="section-title">お試しプラン</h2>
-            <h3>初回のみ 1000件 ¥45,000-(税抜き)で配信</h3>
-            <div class="features">
-                <div class="feature">
-                    <h3>お試しプランでできること</h3>
-                    <ul class="icon-list">
-                        <li><i class="fas fa-check-circle"></i>ターゲット企業1000社のリストアップ</li>
-                        <li><i class="fas fa-check-circle"></i>効果的な文言作成サポート</li>
-                        <li><i class="fas fa-check-circle"></i>投げ込み実行</li>
-                        <li><i class="fas fa-check-circle"></i>詳細な結果レポート共有</li>
-                    </ul>
-                </div>
-                <div class="feature">
-                    <h3>こんな方にオススメ</h3>
-                    <ul class="icon-list">
-                        <li><i class="fas fa-user"></i>大量の企業に一気にアプローチしたい方</li>
-                        <li><i class="fas fa-chart-bar"></i>営業の効率を上げたい方</li>
-                        <li><i class="fas fa-search"></i>新規顧客開拓の新しい方法を探している方</li>
-                    </ul>
-                </div>
-            </div>
-            <p>通常料金の半額以下でFORM2000の全機能をお試しいただけます。</p>
-        </section>
+            <section id="about" class="section">
+                <h2 class="section-title">FORM2000とは？</h2>
+                <p class="section-description">FORM2000は、インサイドセールスのリード獲得からアポイント確定までを支援するサービスです。<br>ニーズヒアリングから企業リスト抽出、効果的な問い合わせ実施まで、一連のプロセスをサポートします。</p>
+            </section>
 
-        <section id="media2000" class="section">
-            <h2 class="section-title">Media2000</h2>
-            <h3>全国のWEBメディアに一斉配信</h3>
-            <p>全国1400以上のWebメディアへ同時アプローチを実行。低コストで効率的なPR活動を実現します。</p>
-            <div class="feature">
-                <h3>概要</h3>
-                <p>FORM2000の機能を活用し、弊社の保有する全国1400以上のWebメディアへの同時アプローチを実現します。業界やテーマ別のメディアセグメント化機能により、ターゲットを絞ったPR戦略の実行が可能です。</p>
-                <p>開封率、クリック率、掲載率などの詳細なKPIレポートを提供することで、定量的な評価を可能にし、戦略の継続的な改善を支援します。</p>
-            </div>
-        </section>
+            <section id="features" class="section">
+                <h2 class="section-title">FORM2000の特徴</h2>
+                <div class="features">
+                    <div class="feature">
+                        <i class="fas fa-list-alt feature-icon"></i>
+                        <h3>最新企業リスト</h3>
+                        <p>最新のプレスリリースから企業リストを収集。業種やカテゴリー指定で効果的なアプローチが可能。</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-tasks feature-icon"></i>
+                        <h3>一括フォーム送信</h3>
+                        <p>リード獲得・マーケティングを代行し、貴社営業チームがクロージングに集中できる環境を提供。</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-chart-bar feature-icon"></i>
+                        <h3>結果分析とサポート</h3>
+                        <p>企業の反応を詳細に分析。投げ込み内容の継続的な改善提案で、効果を最大化。</p>
+                    </div>
+                </div>
+            </section>
 
-        <section id="partner-recruitment" class="section">
-            <h2 class="section-title">FORM2000代理店パートナー募集中！</h2>
-            <p>初期費用0円でスタート可能。</p>
-            <h3>パートナーのメリット</h3>
-            <div class="features">
-                <div class="feature">
-                    <i class="fas fa-piggy-bank feature-icon"></i>
-                    <h3>初期投資が不要</h3>
-                    <p>リスクを最小限に抑えた新規事業展開が可能です。</p>
+            <section id="about" class="section">
+                <h2 class="section-title">ご利用の流れ</h2>
+                <ol class="steps">
+                    <li>お申込み：必要情報をご共有</li>
+                    <li>初回ヒアリング：ターゲット設定、投げ込み文の確認</li>
+                    <li>リスト共有：アタックリストのご提供</li>
+                    <li>フォーム送信実行：ターゲット企業へアプローチ</li>
+                    <li>結果共有と改善：レポート提供と次回への改善提案</li>
+                </ol>
+            </section>
+
+            <section id="faq" class="section faq">
+                <h2 class="section-title">よくある質問</h2>
+                <div class="faq-item">
+                    <h3>Q1: 他社の営業代行サービスとの違いは？</h3>
+                    <p>デイリーで大手プレス掲載サイトから企業リストを収集しているため、
+鮮度が高く動きのある企業へ効率的にアプローチすることが可能です。
+「エンターテイメント」「医療」など、カテゴリーを指定したリスト抽出が可能です。</p>
                 </div>
-                <div class="feature">
-                    <i class="fas fa-tags feature-icon"></i>
-                    <h3>シンプルな価格設定</h3>
-                    <p>既存の商材販売原価に上乗せする仕組み。</p>
+                <div class="faq-item">
+                    <h3>Q2: 対応可能な業種は？</h3>
+                    <p>BtoB企業であれば、業種や規模を問わず対応可能です。</p>
                 </div>
-                <div class="feature">
-                    <i class="fas fa-handshake feature-icon"></i>
-                    <h3>既存商材との相乗効果</h3>
-                    <p>貴社商材と組み合わせることで独自の付加価値を生み出します。</p>
+                <div class="faq-item">
+                    <h3>Q3: 最低契約期間は？</h3>
+                    <p>3ヶ月からご契約いただけます。</p>
                 </div>
-                <div class="feature">
-                    <i class="fas fa-headset feature-icon"></i>
-                    <h3>販売後のサポート</h3>
-                    <p>オペレーション部分は弊社側で代行いたします。</p>
+                <div class="faq-item">
+                    <h3>Q4: 成果報酬型のプランはありますか？</h3>
+                    <p>ご用意しております。詳細は担当までお問い合わせください。</p>
                 </div>
+            </section>
+
+            <section class="section contact-form">
+                <h2 class="section-title">お問い合わせ</h2>
+                <div class="google-form-container">
+                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSegAJgLIAjAd7FRsCY65MoVKtCqzE29RwawFrVuU8aAYntLOQ/viewform?embedded=true" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
+                </div>
+            </section>
+
+            <div class="bottom-cta">
+                <a href="https://drive.google.com/file/d/1sJo5kfxl0ubKbivkpj9cGTN1CiEaitFZ/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-secondary"><i class="fas fa-file-download"></i> 資料ダウンロード</a>
+                <a href="https://app.spirinc.com/t/RVcehBZsOrGrLw4uB-pLU/as/nXnUmKjz9VPZwY6e8AFVe/confirm" target="_blank" rel="noopener noreferrer" class="btn btn-primary"><i class="fas fa-video"></i> WEB会議でご相談</a>
             </div>
-        </section>
+        </div>
     </div>
 
     <footer>
         <p>© 2024 Mural Inc. All Rights Reserved.</p>
     </footer>
+
+    <script>
+    // Perlin Noise の実装（簡略化版）
+    const noise = {
+        grad3: new Float64Array([1,1,0,-1,1,0,1,-1,0,-1,-1,0,1,0,1,-1,0,1,1,0,-1,-1,0,-1,0,1,1,0,-1,1,0,1,-1,0,-1,-1]),
+        p: new Uint8Array(256),
+        perm: new Uint8Array(512),
+        seed(seed) {
+            if(seed > 0 && seed < 1) seed *= 65536;
+            seed = Math.floor(seed);
+            if(seed < 256) seed |= seed << 8;
+            for(let i = 0; i < 256; i++) {
+                let v;
+                if (i & 1) v = this.p[i] ^ (seed & 255);
+                else v = this.p[i] ^ ((seed>>8) & 255);
+                this.perm[i] = this.perm[i + 256] = v;
+            }
+        },
+        perlin2(x, y) {
+            const X = Math.floor(x) & 255, Y = Math.floor(y) & 255;
+            x -= Math.floor(x); y -= Math.floor(y);
+            const fx = (3 - 2*x)*x*x, fy = (3 - 2*y)*y*y;
+            const p0 = this.perm[X]+Y, p1 = this.perm[X+1]+Y;
+            return (1 - fy) * (
+                (1 - fx) * this.grad2(this.perm[p0], x, y) +
+                fx * this.grad2(this.perm[p1], x-1, y)
+            ) + fy * (
+                (1 - fx) * this.grad2(this.perm[p0+1], x, y-1) +
+                fx * this.grad2(this.perm[p1+1], x-1, y-1)
+            );
+        },
+        grad2(hash, x, y) {
+            const h = hash & 15;
+            const grad_x = 1 + (h & 7);
+            const grad_y = (h & 8) ? -1 : 1;
+            return (grad_x * x + grad_y * y);
+        }
+    };
+
+    let stageW = 0;
+    let stageH = 0;
+    const canvas = document.getElementById("bg-canvas");
+    const context = canvas.getContext("2d");
+
+    noise.seed(Math.random());
+    resize();
+    tick();
+
+    window.addEventListener("resize", resize);
+
+    function tick() {
+        requestAnimationFrame(tick);
+        const time = Date.now() / 4000;
+        draw(time);
+    }
+
+    function draw(time) {
+        context.clearRect(0, 0, stageW, stageH);
+        context.lineWidth = 1;
+        const amplitude = stageH / 4;
+        const lineNum = 50;
+        const segmentNum = 150;
+
+        [...Array(lineNum).keys()].forEach((j) => {
+            const coefficient = 50 + j;
+            context.beginPath();
+            const hue = 200 + (j / lineNum) * 40; // 青系統の色相
+            const opacity = 0.1 + (j / lineNum) * 0.2; // 透明度を調整
+            context.strokeStyle = `hsla(${hue}, 80%, 50%, ${opacity})`;
+
+            [...Array(segmentNum).keys()].forEach((i) => {
+                const x = (i / (segmentNum - 1)) * stageW;
+                const px = i / coefficient;
+                const py = j / 50 + time;
+                const y = amplitude * noise.perlin2(px, py) + stageH / 2;
+                if (i === 0) {
+                    context.moveTo(x, y);
+                } else {
+                    context.lineTo(x, y);
+                }
+            });
+            context.stroke();
+        });
+    }
+
+    function resize() {
+        stageW = window.innerWidth;
+        stageH = window.innerHeight;
+        canvas.width = stageW;
+        canvas.height = stageH;
+    }
+    </script>
 </body>
 </html>
