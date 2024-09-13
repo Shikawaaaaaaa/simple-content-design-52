@@ -10,6 +10,7 @@ const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
+      <canvas id="bg-canvas" className="fixed top-0 left-0 w-full h-full -z-10"></canvas>
       <BrowserRouter>
         <Routes>
           {navItems.map(({ to, page }) => (

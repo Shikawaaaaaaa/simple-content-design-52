@@ -6,7 +6,6 @@ import { ListFilter, Rocket, Newspaper, Handshake } from 'lucide-react';
 const Index = () => {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-blue-100 to-indigo-200 p-4">
-      <canvas id="bg-canvas" className="fixed top-0 left-0 w-full h-full -z-10"></canvas>
       <h1 className="text-4xl font-bold mb-8 text-blue-600">Form2000</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl w-full">
         <Link to="/custom-list">
