@@ -16,48 +16,9 @@
             overflow-x: hidden;
             font-size: 16px;
         }
-        .section-description {
-            text-align: center;
-            font-size: 18px;
-            margin-bottom: 30px;
-        }
-        .google-form-container {
-            width: 100%;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        footer {
-            background-color: #f8f9fa;
-            text-align: center;
-            padding: 20px 0;
-            margin-top: 50px;
-        }
-        footer p {
-            margin: 0;
-            font-size: 14px;
-            color: #666;
-        }
-        .btn i {
-            margin-right: 8px;
-        }
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        #bg-canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-        }
         .container {
             width: 90%;
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
         }
@@ -74,24 +35,9 @@
             color: #3498db;
             display: flex;
             align-items: center;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-        .logo-text {
-            position: relative;
         }
         .logo-2000 {
             font-weight: 700;
-        }
-        .logo::before {
-            content: '';
-            position: absolute;
-            left: -10px;
-            top: 50%;
-            width: 5px;
-            height: 70%;
-            background-color: #3498db;
-            transform: translateY(-50%);
         }
         .cta-buttons {
             display: flex;
@@ -105,6 +51,10 @@
             border-radius: 5px;
             font-size: 14px;
             font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
         }
         .btn-primary {
             background-color: #3498db;
@@ -119,16 +69,8 @@
             transform: translateY(-2px);
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
-        .content-wrapper {
-            background-color: rgba(255, 255, 255, 0.9);
-            margin: 0 auto;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-        }
-        .content-wrapper:hover {
-            box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+        .btn i {
+            margin-right: 8px;
         }
         .section {
             margin: 80px 0;
@@ -138,22 +80,19 @@
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         .section-title {
-            font-size: 28px;
+            font-size: 32px;
             color: #2c3e50;
             text-align: center;
             margin-bottom: 30px;
             font-weight: 700;
         }
-        .hero h1 {
-            font-size: 24px;
-            color: #333;
+        .section-description {
             text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-            font-weight: 700;
+            font-size: 18px;
+            margin-bottom: 30px;
         }
         .feature-icon {
-            font-size: 36px;
+            font-size: 48px;
             color: #3498db;
             margin-bottom: 15px;
         }
@@ -171,146 +110,57 @@
             border-radius: 10px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             transition: all 0.3s ease;
+            text-align: center;
         }
         .feature:hover {
             transform: translateY(-5px);
             box-shadow: 0 4px 8px rgba(0,0,0,0.15);
         }
         .feature h3 {
-            font-size: 18px;
+            font-size: 20px;
             color: #3498db;
             margin-top: 0;
             font-weight: 700;
         }
         .feature p {
-            font-size: 14px;
+            font-size: 16px;
             margin-bottom: 0;
         }
-        .steps {
-            counter-reset: step-counter;
-            list-style-type: none;
-            padding-left: 0;
+        #custom-list {
+            background-color: #e8f4fd;
         }
-        .steps li {
-            counter-increment: step-counter;
-            margin-bottom: 20px;
-            position: relative;
-            padding-left: 40px;
-            font-size: 16px;
+        #trial-plan {
+            background-color: #e8fdf0;
         }
-        .steps li::before {
-            content: counter(step-counter);
-            position: absolute;
-            left: 0;
-            top: 0;
-            background-color: #3498db;
-            color: white;
-            font-weight: bold;
-            font-size: 1.2em;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        #media2000 {
+            background-color: #fdf0e8;
         }
-        .faq-item {
-            margin-bottom: 30px;
-            background-color: #f8f9fa;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
+        #partner-recruitment {
+            background-color: #f0e8fd;
         }
-        .faq-item:hover {
-            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-        }
-        .faq-item h3 {
-            font-size: 18px;
-            color: #3498db;
-            font-weight: 700;
-        }
-        .faq-item p {
-            font-size: 14px;
-        }
-        .form-group {
-            margin-bottom: 20px;
-        }
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-size: 14px;
-            font-weight: 700;
-        }
-        .form-group input,
-        .form-group textarea {
+        .google-form-container {
             width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 14px;
+            max-width: 800px;
+            margin: 0 auto;
         }
-        .submit-btn {
-            background-color: #3498db;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: all 0.3s ease;
-            font-size: 14px;
-            font-weight: bold;
-        }
-        .submit-btn:hover {
-            background-color: #2980b9;
-        }
-        .bottom-cta {
+        footer {
+            background-color: #f8f9fa;
             text-align: center;
+            padding: 20px 0;
             margin-top: 50px;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            padding: 0 20px;
         }
-        .bottom-cta .btn {
-            flex: 1;
-            max-width: 400px;
-            font-size: 18px;
-            padding: 15px 30px;
-        }
-        @media (max-width: 768px) {
-            .bottom-cta {
-                flex-direction: column;
-            }
-            .bottom-cta .btn {
-                width: 100%;
-                max-width: none;
-            }
-        }
-        nav {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-        }
-        nav a {
-            margin: 0 15px;
-            text-decoration: none;
-            color: #333;
-            font-weight: bold;
+        footer p {
+            margin: 0;
             font-size: 14px;
-            transition: color 0.3s ease;
-        }
-        nav a:hover {
-            color: #3498db;
+            color: #666;
         }
     </style>
 </head>
 <body>
-    <canvas id="bg-canvas"></canvas>
     <div class="container">
         <header>
             <div class="logo">
-                <span class="logo-text">FORM<span class="logo-2000">2000</span></span>
+                FORM<span class="logo-2000">2000</span>
             </div>
             <div class="cta-buttons">
                 <a href="https://drive.google.com/file/d/1sJo5kfxl0ubKbivkpj9cGTN1CiEaitFZ/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-secondary"><i class="fas fa-file-download"></i> 資料ダウンロード</a>
@@ -318,257 +168,111 @@
             </div>
         </header>
 
-        <nav>
-            <a href="#home">ホーム</a>
-            <a href="#features">特徴</a>
-            <a href="#about">利用の流れ</a>
-            <a href="#faq">FAQ</a>
-        </nav>
-
-        <div class="content-wrapper">
-            <section id="home" class="section hero">
-                <h1>インサイドセールスのリード獲得から商談確定までを<br>継続的に支援するサービス</h1>
-            </section>
-
-            <section id="about" class="section">
-                <h2 class="section-title">FORM2000とは？</h2>
-                <p class="section-description">FORM2000は、インサイドセールスのリード獲得からアポイント確定までを支援するサービスです。<br>ニーズヒアリングから企業リスト抽出、効果的な問い合わせ実施まで、一連のプロセスをサポートします。</p>
-            </section>
-
-            <section id="features" class="section">
-                <h2 class="section-title">FORM2000の特徴</h2>
-                <div class="features">
-                    <div class="feature">
-                        <i class="fas fa-list-alt feature-icon"></i>
-                        <h3>最新企業リスト</h3>
-                        <p>最新のプレスリリースから企業リストを収集。業種やカテゴリー指定で効果的なアプローチが可能。</p>
-                    </div>
-                    <div class="feature">
-                        <i class="fas fa-tasks feature-icon"></i>
-                        <h3>一括フォーム送信</h3>
-                        <p>リード獲得・マーケティングを代行し、貴社営業チームがクロージングに集中できる環境を提供。</p>
-                    </div>
-                    <div class="feature">
-                        <i class="fas fa-chart-bar feature-icon"></i>
-                        <h3>結果分析とサポート</h3>
-                        <p>企業の反応を詳細に分析。投げ込み内容の継続的な改善提案で、効果を最大化。</p>
-                    </div>
-                </div>
-            </section>
-
-            <section id="about" class="section">
-                <h2 class="section-title">ご利用の流れ</h2>
-                <ol class="steps">
-                    <li>お申込み：必要情報をご共有</li>
-                    <li>初回ヒアリング：ターゲット設定、投げ込み文の確認</li>
-                    <li>リスト共有：アタックリストのご提供</li>
-                    <li>フォーム送信実行：ターゲット企業へアプローチ</li>
-                    <li>結果共有と改善：レポート提供と次回への改善提案</li>
-                </ol>
-            </section>
-
-            <section id="faq" class="section faq">
-                <h2 class="section-title">よくある質問</h2>
-                <div class="faq-item">
-                    <h3>Q1: 他社の営業代行サービスとの違いは？</h3>
-                    <p>デイリーで大手プレス掲載サイトから企業リストを収集しているため、
-鮮度が高く動きのある企業へ効率的にアプローチすることが可能です。
-「エンターテイメント」「医療」など、カテゴリーを指定したリスト抽出が可能です。</p>
-                </div>
-                <div class="faq-item">
-                    <h3>Q2: 対応可能な業種は？</h3>
-                    <p>BtoB企業であれば、業種や規模を問わず対応可能です。</p>
-                </div>
-                <div class="faq-item">
-                    <h3>Q3: 最低契約期間は？</h3>
-                    <p>3ヶ月からご契約いただけます。</p>
-                </div>
-                <div class="faq-item">
-                    <h3>Q4: 成果報酬型のプランはありますか？</h3>
-                    <p>ご用意しております。詳細は担当までお問い合わせください。</p>
-                </div>
-            </section>
-
-            <!-- New sections start here -->
-            <section id="custom-list" class="section">
-                <h2 class="section-title">カスタムリスト抽出</h2>
-                <p class="section-description">プレスリリース以外にも、ご要望に応じたオーダーメイドのリストを抽出いたします。</p>
-                <div class="features">
-                    <div class="feature">
-                        <h3>業界イベントに出展した企業リスト</h3>
-                    </div>
-                    <div class="feature">
-                        <h3>資金調達に成功した企業リスト</h3>
-                    </div>
-                    <div class="feature">
-                        <h3>直近で求人募集を始めた企業リスト</h3>
-                    </div>
-                    <div class="feature">
-                        <h3>SDGs関連の取り組みを行っている企業リスト</h3>
-                    </div>
-                </div>
-            </section>
-
-            <section id="trial-plan" class="section">
-                <h2 class="section-title">お試しプラン</h2>
-                <p class="section-description">初回のみ 1000件 ¥45,000-(税抜き)で配信</p>
-                <div class="features">
-                    <div class="feature">
-                        <h3>ターゲット企業1000社のリストアップ</h3>
-                    </div>
-                    <div class="feature">
-                        <h3>効果的な文言作成サポート</h3>
-                    </div>
-                    <div class="feature">
-                        <h3>投げ込み実行</h3>
-                    </div>
-                    <div class="feature">
-                        <h3>詳細な結果レポート共有</h3>
-                    </div>
-                </div>
-            </section>
-
-            <section id="media2000" class="section">
-                <h2 class="section-title">Media2000</h2>
-                <p class="section-description">全国1400以上のWebメディアへ同時アプローチを実行。低コストで効率的なPR活動を実現します。</p>
+        <section id="custom-list" class="section">
+            <h2 class="section-title">カスタムリスト抽出</h2>
+            <p class="section-description">幅広いリスト抽出に対応。プレスリリース以外にも、ご要望に応じたオーダーメイドのリストを抽出いたします。</p>
+            <div class="features">
                 <div class="feature">
-                    <h3>FORM2000の機能を活用</h3>
-                    <p>業界やテーマ別のメディアセグメント化機能により、ターゲットを絞ったPR戦略の実行が可能です。</p>
+                    <i class="fas fa-users feature-icon"></i>
+                    <h3>業界イベント出展企業</h3>
                 </div>
-            </section>
-
-            <section id="partner-recruitment" class="section">
-                <h2 class="section-title">FORM2000代理店パートナー募集中！</h2>
-                <p class="section-description">初期費用0円でスタート可能。</p>
-                <div class="features">
-                    <div class="feature">
-                        <h3>初期投資が不要</h3>
-                        <p>リスクを最小限に抑えた新規事業展開が可能です。</p>
-                    </div>
-                    <div class="feature">
-                        <h3>シンプルな価格設定</h3>
-                        <p>既存の商材販売原価に上乗せする仕組み。</p>
-                    </div>
-                    <div class="feature">
-                        <h3>既存商材との相乗効果</h3>
-                        <p>貴社商材と組み合わせることで独自の付加価値を生み出します。</p>
-                    </div>
-                    <div class="feature">
-                        <h3>販売後のサポート</h3>
-                        <p>オペレーション部分は弊社側で代行いたします。</p>
-                    </div>
+                <div class="feature">
+                    <i class="fas fa-chart-line feature-icon"></i>
+                    <h3>資金調達成功企業</h3>
                 </div>
-            </section>
-            <!-- New sections end here -->
-
-            <section class="section contact-form">
-                <h2 class="section-title">お問い合わせ</h2>
-                <div class="google-form-container">
-                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSegAJgLIAjAd7FRsCY65MoVKtCqzE29RwawFrVuU8aAYntLOQ/viewform?embedded=true" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
+                <div class="feature">
+                    <i class="fas fa-search feature-icon"></i>
+                    <h3>求人募集開始企業</h3>
                 </div>
-            </section>
-
-            <div class="bottom-cta">
-                <a href="https://drive.google.com/file/d/1sJo5kfxl0ubKbivkpj9cGTN1CiEaitFZ/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-secondary"><i class="fas fa-file-download"></i> 資料ダウンロード</a>
-                <a href="https://app.spirinc.com/t/RVcehBZsOrGrLw4uB-pLU/as/nXnUmKjz9VPZwY6e8AFVe/confirm" target="_blank" rel="noopener noreferrer" class="btn btn-primary"><i class="fas fa-video"></i> WEB会議でご相談</a>
+                <div class="feature">
+                    <i class="fas fa-globe feature-icon"></i>
+                    <h3>SDGs取り組み企業</h3>
+                </div>
             </div>
-        </div>
+        </section>
+
+        <section id="trial-plan" class="section">
+            <h2 class="section-title">お試しプラン</h2>
+            <p class="section-description">初回のみ 1000件 ¥45,000-(税抜き)で配信</p>
+            <div class="features">
+                <div class="feature">
+                    <i class="fas fa-list-ol feature-icon"></i>
+                    <h3>1000社リストアップ</h3>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-pencil-alt feature-icon"></i>
+                    <h3>文言作成サポート</h3>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-paper-plane feature-icon"></i>
+                    <h3>投げ込み実行</h3>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-chart-bar feature-icon"></i>
+                    <h3>結果レポート共有</h3>
+                </div>
+            </div>
+        </section>
+
+        <section id="media2000" class="section">
+            <h2 class="section-title">Media2000</h2>
+            <p class="section-description">全国1400以上のWebメディアへ同時アプローチを実行。低コストで効率的なPR活動を実現します。</p>
+            <div class="features">
+                <div class="feature">
+                    <i class="fas fa-bullhorn feature-icon"></i>
+                    <h3>一斉配信</h3>
+                    <p>全国のWebメディアに効率的にアプローチ</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-filter feature-icon"></i>
+                    <h3>ターゲット絞り込み</h3>
+                    <p>業界やテーマ別のメディアセグメント化</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-chart-pie feature-icon"></i>
+                    <h3>詳細KPIレポート</h3>
+                    <p>開封率、クリック率、掲載率など</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="partner-recruitment" class="section">
+            <h2 class="section-title">FORM2000代理店パートナー募集中！</h2>
+            <p class="section-description">初期費用0円でスタート可能。</p>
+            <div class="features">
+                <div class="feature">
+                    <i class="fas fa-piggy-bank feature-icon"></i>
+                    <h3>初期投資不要</h3>
+                    <p>リスクを最小限に抑えた新規事業展開</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-tags feature-icon"></i>
+                    <h3>シンプルな価格設定</h3>
+                    <p>既存商材販売原価に上乗せする仕組み</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-puzzle-piece feature-icon"></i>
+                    <h3>既存商材との相乗効果</h3>
+                    <p>独自の付加価値を生み出す</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-headset feature-icon"></i>
+                    <h3>販売後のサポート</h3>
+                    <p>オペレーション部分は弊社で代行</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section contact-form">
+            <h2 class="section-title">お問い合わせ</h2>
+            <div class="google-form-container">
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSegAJgLIAjAd7FRsCY65MoVKtCqzE29RwawFrVuU8aAYntLOQ/viewform?embedded=true" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
+            </div>
+        </section>
     </div>
 
     <footer>
         <p>© 2024 Mural Inc. All Rights Reserved.</p>
     </footer>
-
-    <script>
-    // Perlin Noise implementation (simplified version)
-    const noise = {
-        grad3: new Float64Array([1,1,0,-1,1,0,1,-1,0,-1,-1,0,1,0,1,-1,0,1,1,0,-1,-1,0,-1,0,1,1,0,-1,1,0,1,-1,0,-1,-1]),
-        p: new Uint8Array(256),
-        perm: new Uint8Array(512),
-        seed(seed) {
-            if(seed > 0 && seed < 1) seed *= 65536;
-            seed = Math.floor(seed);
-            if(seed < 256) seed |= seed << 8;
-            for(let i = 0; i < 256; i++) {
-                let v;
-                if (i & 1) v = this.p[i] ^ (seed & 255);
-                else v = this.p[i] ^ ((seed>>8) & 255);
-                this.perm[i] = this.perm[i + 256] = v;
-            }
-        },
-        perlin2(x, y) {
-            const X = Math.floor(x) & 255, Y = Math.floor(y) & 255;
-            x -= Math.floor(x); y -= Math.floor(y);
-            const fx = (3 - 2*x)*x*x, fy = (3 - 2*y)*y*y;
-            const p0 = this.perm[X]+Y, p1 = this.perm[X+1]+Y;
-            return (1 - fy) * (
-                (1 - fx) * this.grad2(this.perm[p0], x, y) +
-                fx * this.grad2(this.perm[p1], x-1, y)
-            ) + fy * (
-                (1 - fx) * this.grad2(this.perm[p0+1], x, y-1) +
-                fx * this.grad2(this.perm[p1+1], x-1, y-1)
-            );
-        },
-        grad2(hash, x, y) {
-            const h = hash & 15;
-            const grad_x = 1 + (h & 7);
-            const grad_y = (h & 8) ? -1 : 1;
-            return (grad_x * x + grad_y * y);
-        }
-    };
-
-    let stageW = 0;
-    let stageH = 0;
-    const canvas = document.getElementById("bg-canvas");
-    const context = canvas.getContext("2d");
-
-    noise.seed(Math.random());
-    resize();
-    tick();
-
-    window.addEventListener("resize", resize);
-
-    function tick() {
-        requestAnimationFrame(tick);
-        const time = Date.now() / 4000;
-        draw(time);
-    }
-
-    function draw(time) {
-        context.clearRect(0, 0, stageW, stageH);
-        context.lineWidth = 1;
-        const amplitude = stageH / 4;
-        const lineNum = 50;
-        const segmentNum = 150;
-
-        [...Array(lineNum).keys()].forEach((j) => {
-            const coefficient = 50 + j;
-            context.beginPath();
-            const hue = 200 + (j / lineNum) * 40; // Blue-based hue
-            const opacity = 0.1 + (j / lineNum) * 0.2; // Adjust opacity
-            context.strokeStyle = `hsla(${hue}, 80%, 50%, ${opacity})`;
-
-            [...Array(segmentNum).keys()].forEach((i) => {
-                const x = (i / (segmentNum - 1)) * stageW;
-                const px = i / coefficient;
-                const py = j / 50 + time;
-                const y = amplitude * noise.perlin2(px, py) + stageH / 2;
-                if (i === 0) {
-                    context.moveTo(x, y);
-                } else {
-                    context.lineTo(x, y);
-                }
-            });
-            context.stroke();
-        });
-    }
-
-    function resize() {
-        stageW = window.innerWidth;
-        stageH = window.innerHeight;
-        canvas.width = stageW;
-        canvas.height = stageH;
-    }
-    </script>
 </body>
 </html>
