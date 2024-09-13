@@ -7,153 +7,33 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Museo+Moderno:wght@100&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            font-family: 'Noto Sans JP', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            overflow-x: hidden;
-            font-size: 16px;
-        }
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-        }
-        .logo {
-            font-family: 'Museo Moderno', sans-serif;
-            font-size: 48px;
-            font-weight: 100;
-            color: #3498db;
-            display: flex;
-            align-items: center;
-        }
-        .logo-2000 {
-            font-weight: 700;
-        }
-        .cta-buttons {
-            display: flex;
-        }
-        .btn {
-            padding: 10px 20px;
-            margin-left: 10px;
-            border: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border-radius: 5px;
-            font-size: 14px;
-            font-weight: bold;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-        }
-        .btn-primary {
-            background-color: #3498db;
-            color: white;
-        }
-        .btn-secondary {
-            background-color: white;
-            color: #3498db;
-            border: 1px solid #3498db;
-        }
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        }
-        .btn i {
-            margin-right: 8px;
-        }
-        .section {
-            margin: 80px 0;
-            padding: 40px;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        .section-title {
-            font-size: 32px;
-            color: #2c3e50;
-            text-align: center;
-            margin-bottom: 30px;
-            font-weight: 700;
-        }
-        .section-description {
-            text-align: center;
-            font-size: 18px;
-            margin-bottom: 30px;
-        }
-        .feature-icon {
-            font-size: 48px;
-            color: #3498db;
-            margin-bottom: 15px;
-        }
-        .features {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-        .feature {
-            flex: 1;
-            min-width: 250px;
-            background-color: #f8f9fa;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-            text-align: center;
-        }
-        .feature:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-        }
-        .feature h3 {
-            font-size: 20px;
-            color: #3498db;
-            margin-top: 0;
-            font-weight: 700;
-        }
-        .feature p {
-            font-size: 16px;
-            margin-bottom: 0;
-        }
-        #custom-list {
-            background-color: #e8f4fd;
-        }
-        #trial-plan {
-            background-color: #e8fdf0;
-        }
-        #media2000 {
-            background-color: #fdf0e8;
-        }
-        #partner-recruitment {
-            background-color: #f0e8fd;
-        }
-        .google-form-container {
-            width: 100%;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        footer {
-            background-color: #f8f9fa;
-            text-align: center;
-            padding: 20px 0;
-            margin-top: 50px;
-        }
-        footer p {
-            margin: 0;
-            font-size: 14px;
-            color: #666;
-        }
+        body, html { margin: 0; padding: 0; font-family: 'Noto Sans JP', sans-serif; line-height: 1.6; color: #333; overflow-x: hidden; font-size: 16px; }
+        .container { width: 90%; max-width: 1200px; margin: 0 auto; padding: 20px; }
+        header { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; }
+        .logo { font-family: 'Museo Moderno', sans-serif; font-size: 48px; font-weight: 100; color: #3498db; display: flex; align-items: center; }
+        .logo-2000 { font-weight: 700; }
+        .cta-buttons { display: flex; }
+        .btn { padding: 10px 20px; margin-left: 10px; border: none; cursor: pointer; transition: all 0.3s ease; border-radius: 5px; font-size: 14px; font-weight: bold; display: inline-flex; align-items: center; justify-content: center; text-decoration: none; }
+        .btn-primary { background-color: #3498db; color: white; }
+        .btn-secondary { background-color: white; color: #3498db; border: 1px solid #3498db; }
+        .btn:hover { transform: translateY(-2px); box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+        .btn i { margin-right: 8px; }
+        .section { margin: 80px 0; padding: 40px; background-color: white; border-radius: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .section-title { font-size: 32px; color: #2c3e50; text-align: center; margin-bottom: 30px; font-weight: 700; }
+        .section-description { text-align: center; font-size: 18px; margin-bottom: 30px; }
+        .feature-icon { font-size: 48px; color: #3498db; margin-bottom: 15px; }
+        .features { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
+        .feature { flex: 1; min-width: 250px; background-color: #f8f9fa; padding: 20px; border-radius: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: all 0.3s ease; text-align: center; }
+        .feature:hover { transform: translateY(-5px); box-shadow: 0 4px 8px rgba(0,0,0,0.15); }
+        .feature h3 { font-size: 20px; color: #3498db; margin-top: 0; font-weight: 700; }
+        .feature p { font-size: 16px; margin-bottom: 0; }
+        #custom-list { background-color: #e8f4fd; }
+        #trial-plan { background-color: #e8fdf0; }
+        #media2000 { background-color: #fdf0e8; }
+        #partner-recruitment { background-color: #f0e8fd; }
+        .google-form-container { width: 100%; max-width: 800px; margin: 0 auto; }
+        footer { background-color: #f8f9fa; text-align: center; padding: 20px 0; margin-top: 50px; }
+        footer p { margin: 0; font-size: 14px; color: #666; }
     </style>
 </head>
 <body>
