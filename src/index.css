@@ -68,30 +68,38 @@
   z-index: -1;
 }
 
-/* モバイル向けスタイル */
+/* Mobile styles */
 @media (max-width: 767px) {
+  html {
+    font-size: 14px;
+  }
+
   body {
-    @apply text-base;
+    @apply text-sm;
+  }
+
+  h1 {
+    @apply text-xl font-bold mb-4;
+  }
+
+  h2 {
+    @apply text-lg font-semibold mb-3;
+  }
+
+  .btn, button, a {
+    @apply min-h-[44px] min-w-[44px] px-4 py-2 text-base;
   }
 
   .container {
     @apply px-4 py-4;
   }
 
-  h1 {
-    @apply text-2xl font-bold mb-4;
-  }
-
-  h2 {
-    @apply text-xl font-semibold mb-3;
-  }
-
-  .btn {
-    @apply px-4 py-3 text-base;
+  input, select, textarea {
+    @apply text-base p-2;
   }
 }
 
-/* デスクトップ向けスタイル */
+/* Desktop styles */
 @media (min-width: 768px) {
   body {
     @apply text-base;
