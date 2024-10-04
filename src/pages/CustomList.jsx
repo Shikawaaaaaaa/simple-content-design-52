@@ -7,7 +7,7 @@ const CustomList = () => {
       <h1 className="text-2xl sm:text-3xl font-bold mb-6 text-blue-600">カスタムリスト抽出</h1>
       <Card className="mb-6">
         <CardHeader>
-          <CardTitle className="text-xl sm:text-2xl">幅広いリスト抽出に対応</CardTitle>
+          <CardTitle className="text-lg sm:text-xl">幅広いリスト抽出に対応</CardTitle>
         </CardHeader>
         <CardContent>
           <p className="text-sm sm:text-base">プレスリリース以外にも、ご要望に応じたオーダーメイドのリストを抽出いたします。まずはご相談ください。</p>
@@ -21,13 +21,11 @@ const CustomList = () => {
           { icon: "🌍", title: "SDGs関連の取り組みを行っている企業リスト" },
           { icon: "🤝", title: "特定の業界団体に参加している企業リスト" }
         ].map((item, index) => (
-          <Card key={index}>
-            <CardHeader>
-              <CardTitle className="flex items-center text-base sm:text-lg">
-                <span className="text-xl sm:text-2xl mr-2">{item.icon}</span>
-                {item.title}
-              </CardTitle>
-            </CardHeader>
+          <Card key={index} className="p-4">
+            <CardTitle className="flex items-center text-base sm:text-lg">
+              <span className="text-xl sm:text-2xl mr-2">{item.icon}</span>
+              {item.title}
+            </CardTitle>
           </Card>
         ))}
       </div>
